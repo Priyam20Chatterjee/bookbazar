@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import BookCard from '../components/BookCard';
 import SortDropDown from '../components/SortDropDown';
-// import FilterPanner from '../components/FilterPannel';
 import { books } from '../data/books';
 import ResetButton from '../components/ResetButton';
 
@@ -32,6 +31,7 @@ export default function Home() {
     return result;
   },[filters, sortByOrder])
 
+
   const resultFilters = () => {
     setfilters({genre: [], author: [], publisher: []})
     setSortByOrder("")
@@ -40,7 +40,6 @@ export default function Home() {
   return (
     <div>
       <h1>Book-Bazar</h1>
-      {/* <FilterPanel filters = {filters} setfilters={setfilters} uniqueOptions={uniqueOptions}/> */}
       <SortDropDown sortByOrder={sortByOrder} setSortByOrder={setSortByOrder}/>
       <ResetButton resetFilters={resultFilters}/>
       <div style={{display: 'grid', gridTemplateColumns: "repeat(4, 1fr)", gap:"7px"}}>
